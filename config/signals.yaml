@@ -1,0 +1,216 @@
+# Signal catalog: the codes, windows, weights, and research guidance behind the
+# prioritized account list. Everything here is data; tune it without touching code.
+# `python3 kit.py check` validates this file and reports exactly what is configured.
+#
+# How scoring works (see account_kit/score.py):
+#   timing_points = distinct timing codes  * (bucket_max / #timing),  capped at bucket_max
+#   study_points  = distinct study codes    * (bucket_max / #study),   capped at bucket_max
+#   final_score   = (timing_points + study_points) * (1 + stack_step * (distinct - 1))
+# A signal counts only when its label is not "unknown", it is inside its window,
+# and it is not the posting-level AI false positive named below.
+
+schema_version: 1
+
+scoring:
+  bucket_max: 50.0
+  stack_step: 0.1
+
+tiers:
+  # Tier 1 needs both a top rank and a strong score; Tier 2 needs the score;
+  # everything else is Tier 3.
+  tier1:
+    max_rank: 50
+    min_score: 40
+  tier2:
+    min_score: 20
+
+labels:
+  # The evidence labels a researcher may assign. "unknown" never counts toward
+  # the score but is kept in the evidence trail.
+  - observed
+  - case
+  - docs
+  - inference
+  - unknown
+
+posting_level_ai:
+  # An AI mention inside a job posting is too common to signal a mandate; the
+  # scorer drops it automatically. Company-level evidence (an executive
+  # statement, an announced rollout) still counts.
+  code: S23
+  source: "job posting"
+
+# ---------------------------------------------------------------------------
+# Timing signals: dated events. Each needs a real date to count, and the date
+# must fall inside its window (days relative to today; negative = past).
+# window: [earliest, latest]; null means unbounded on that side.
+# ---------------------------------------------------------------------------
+timing:
+  T_FUNDING:
+    meaning: "Funding round in the last 12 months"
+    window: [-365, 0]
+    definition: "A funding round with amount and date, within the window. Prefer the company's own announcement or a trade publication."
+    guard: "Needs the amount and the date. An investment whose date is unknown stays unknown."
+  T_NEW_LEADER:
+    meaning: "New engineering leader in the last 9 months"
+    window: [-274, 0]
+    definition: "A new CTO, VP Eng, CIO, or Head of Engineering appointed inside the window, with the appointment date."
+    guard: "A leadership page with no appointment date is not a new leader. CFOs, COOs, and board members are not engineering leaders. A founding CTO in role for years is not new."
+  T_MNA:
+    meaning: "Acquisition or merger"
+    window: [-365, 365]
+    definition: "An acquisition, merger, or system consolidation, dated; a pending deal carries its expected close date, which may be in the future."
+    guard: "An acquisition the account's customer made is not the account's. Take-privates count with the deal date."
+  T_IPO:
+    meaning: "IPO filed or in preparation"
+    window: [-730, 365]
+    definition: "An S-1/F-1 filed, or an IPO publicly in preparation, with the filing or target date."
+    guard: "A company that went public long ago is outside the window. IPO chatter without a filing or stated intent stays unknown."
+  T_DEADLINE:
+    meaning: "Dated deadline (end of support, regulation, audit) within -12/+18 months"
+    window: [-365, 548]
+    definition: "A dated commitment the engineering team must land: end of support on a named stack version, a regulation's effective date, an audit, a contract renewal."
+    guard: "Read the regulator's or statute's own page, not a law-firm summary, and quote its scope words exactly. A compliance job posting is not a dated deadline. End-of-support counts only for a version the account names."
+  T_FREEZE:
+    meaning: "Hiring freeze or layoffs against a stated roadmap"
+    window: [-365, 0]
+    definition: "A hiring freeze, layoffs, or job cuts dated inside the window, while a stated roadmap or product commitment remains."
+    guard: "New postings are evidence against a freeze. A restructuring with no engineering impact stays unknown."
+  T_OUTAGE:
+    meaning: "Outage or incident in the news"
+    window: [-365, 0]
+    definition: "An outage, breach, or security incident at the company itself, dated inside the window."
+    guard: "Customers' outages and vendors' advisories are not the account's incident."
+  T_STALE_REQ:
+    meaning: "Engineering req open more than 180 days"
+    window: [null, -180]
+    definition: "An engineering requisition open past the window: use the posting's first-published date or an archive first-seen date."
+    guard: "Requisition IDs and ATS expiry dates are not creation dates. Non-engineering reqs do not count."
+
+# ---------------------------------------------------------------------------
+# Study signals: the work itself, from the discovery study sheet. `precedent`
+# (A or B) marks how strong the sales precedent is; signals without one carry
+# none. `patterns` are the job-posting scanner's regexes (Python re syntax);
+# codes without patterns are found by research only.
+# ---------------------------------------------------------------------------
+study:
+  S1:
+    meaning: "Legacy modernization and migrations"
+    precedent: A
+    definition: "A named legacy stack (Java 8/11, .NET Framework, an old ORM, AngularJS) or modernization, migration, re-platform, monolith, sunset, decommission work."
+    guard: "COBOL and mainframe work is out of scope for this product: record it and flag it, never sell on it."
+    patterns:
+      - 'java ?(?:8|11)\b|\.net framework|\bcobol\b|mainframe|webforms|\bvb6\b|angularjs|hibernate|entity framework 6|struts'
+      - 'moderni[sz]|re-?platform|migrat\w+ (?:from|to|off|our)|monolith|rewrite|sunset|decommission'
+  S2:
+    meaning: "Maintenance work: KTLO, tech debt, docs"
+    precedent: A
+    definition: "Technical debt, legacy code, keep-the-lights-on, or sustaining engineering load."
+    guard: "A requirement in a posting is a candidate qualification, not the company's own burden."
+    patterns:
+      - 'tech(?:nical)? debt|legacy (?:code|system|application)s?|keep the lights|\bktlo\b|sustaining engineering'
+  S3:
+    meaning: "Incidents and on-call"
+    precedent: A
+    definition: "On-call, site reliability, SRE, incident response, or postmortem ownership."
+    guard: "An uptime requirement in a posting is a qualification, not the company's own incident load."
+    patterns:
+      - 'on-?call|site reliability|\bsre\b|incident (?:response|management)|pagerduty|post-?mortem'
+  S4:
+    meaning: "The review wait"
+    precedent: A
+    definition: "A code-review or pull-request bottleneck: reviewers, review latency, PR throughput."
+    guard: "Inference from tooling must say what it was reasoned from."
+  S5:
+    meaning: "Feature speed and cost of delay"
+    precedent: A
+    definition: "Roadmap or feature delivery pressure tied to customers, revenue, or a dated commitment."
+    guard: "Growth metrics describe the company, not a burden; tie the pressure to a named commitment."
+  S6:
+    meaning: "Cross-cutting changes across services and repos"
+    precedent: A
+    definition: "The same change across many services or repositories; a multi-repo codebase."
+    guard: "A microservices mention alone is architecture description, not a change burden."
+    patterns:
+      - '(?:dozens|hundreds) of (?:micro)?services|across (?:all )?(?:our )?(?:services|repositories|repos)|multi-?repo'
+  S7:
+    meaning: "Security and compliance work"
+    precedent: B
+    definition: "SOC 2, HIPAA, PCI, FedRAMP, ISO 27001, SOX, CMMC, or a vulnerability backlog the team carries."
+    guard: "Holding a certificate is not the same as carrying the work; a dated audit or named obligation is stronger."
+    patterns:
+      - 'vulnerabilit|appsec|application security|soc ?2|fedramp|hipaa|pci[- ]dss|iso ?27001|sox compliance|cmmc'
+  S8:
+    meaning: "Triage"
+    precedent: A
+    definition: "Triage load: ticket backlog, support queue, incoming bug flow."
+    guard: "Support-team staffing is not engineering triage unless the team owns the queue."
+  S9:
+    meaning: "Databases, APIs, data pipelines"
+    precedent: A
+    definition: "Database or schema migration, ETL, data pipeline, API versioning, an engine upgrade."
+    guard: "A database name in a stack list is context; look for the change being made."
+    patterns:
+      - 'database migration|schema migration|\betl\b|data pipeline|api versioning|sql server|oracle (?:db|database)|postgres upgrade'
+  S10:
+    meaning: "Testing and coverage"
+    precedent: B
+    definition: "Test automation, SDET, coverage gaps, regression suites."
+    guard: "A QA-hiring mention alone is thin; look for the gap being named."
+    patterns:
+      - 'test automation|\bsdet\b|test coverage|unit tests? coverage|qa automation|regression suite'
+  S11:
+    meaning: "Codebase spread and orientation"
+    precedent: A
+    definition: "A spread-out codebase: many repos, many products, orientation cost for new engineers."
+    guard: "Count things exactly as the source counts them (repos owned vs products named)."
+  S12:
+    meaning: "Platform engineering backlog"
+    precedent: B
+    definition: "A platform-engineering team or backlog, developer experience, internal developer platform, golden path."
+    guard: "Platform in a product's marketing name is not an internal platform team."
+    patterns:
+      - 'platform engineer|developer experience|\bdevex\b|internal developer platform|golden path|paved road|developer productivity'
+  S23:
+    meaning: "AI mandate or AI tooling rollout"
+    precedent: B
+    definition: "A company-level AI mandate or AI tooling rollout: a CEO or board statement, an announced rollout, AI-first engineering."
+    guard: "An AI mention in a job posting never counts; the scorer drops it automatically. Needs company-level evidence."
+    patterns:
+      - 'ai-?first|agentic|github copilot|\bcursor\b|claude code|ai coding|ai-?assisted development|llm'
+  S_PARTNER:
+    meaning: "Partner SI on the account"
+    definition: "A system integrator working on the account's engineering (see the partner list below)."
+    guard: "Client-facing consulting partners are not engineering SIs. Label partner-claimed claims from the SI's own site."
+  S_CASE:
+    meaning: "Case study in their industry doing the same work"
+    definition: "A published case study in the account's industry doing the same kind of work (see the case-study list below)."
+    guard: "Use only the case studies in that list or pages you actually open; label it `case`."
+
+# ---------------------------------------------------------------------------
+# The job-posting scanner: finds the board, reads engineering postings, and
+# turns posting text into study signals without an LLM. stale_days and the
+# T_STALE_REQ window above must stay equal; the check command asserts this.
+# ---------------------------------------------------------------------------
+job_scan:
+  stale_days: 180
+  # Postings whose titles match this are scanned; others are ignored.
+  engineering_title_pattern: 'engineer|developer|architect|\bsre\b|devops|programmer|software|platform|data|security|qa|test'
+
+# ---------------------------------------------------------------------------
+# Company-specific lists the research prompt needs. These ship with Factory's
+# defaults; a different seller replaces them here.
+# ---------------------------------------------------------------------------
+research:
+  partner_sis:
+    - Wipro
+    - Hexaware
+    - QBurst
+  case_studies:
+    - "Comarch: legacy/database migration"
+    - "Chainguard: multi-repo package builds"
+    - "Empower: incidents and review in fintech"
+    - "Nav: feature speed in fintech under compliance"
+    - "Groq: AI infrastructure"
+    - "You.com: review and agents"
+  out_of_scope_note: "COBOL and mainframe work is out of scope: record it, flag it, never sell on it."

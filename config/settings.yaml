@@ -1,0 +1,138 @@
+# Kit settings: where accounts come from and which ones are worth researching.
+# `python3 kit.py check` validates this file and reports what is configured.
+
+sfdc:
+  # The `sf` CLI's alias for your org on this machine (`sf org list`).
+  # Only `kit.py intake` uses Salesforce; every other step works on files.
+  org: factory-prod
+  # Account owners whose books make up the pool: managers, directors, yourself.
+  owners:
+    - "Jason Yu"
+    - "Chris Campana"
+    - "Brian Perry"
+  # Ownership values that count as open territory. `null` means no value set.
+  ownership_in:
+    - null
+    - "MM Prospect Pool"
+
+limits:
+  shortlist: 300       # accounts worth researching, before research cuts any
+  final: 100           # the prioritized list size
+  batch_size: 6        # accounts per research batch file
+  job_workers: 12      # parallel job-board scans
+  lookup_budget: 6     # max lookups per account in the research prompt
+
+filters:
+  # Countries whose accounts can pass. Empty list = any country.
+  countries:
+    - US
+    - CA
+  # Allowed states and provinces (two-letter codes). Empty list = any region.
+  # Default: US and Canada west of the Mississippi. MN and LA straddle the
+  # river; both are counted west.
+  regions:
+    - WA
+    - OR
+    - CA
+    - NV
+    - ID
+    - MT
+    - WY
+    - UT
+    - AZ
+    - NM
+    - CO
+    - ND
+    - SD
+    - NE
+    - KS
+    - OK
+    - TX
+    - MN
+    - IA
+    - MO
+    - AR
+    - LA
+    - AK
+    - HI
+    - BC
+    - AB
+    - SK
+    - MB
+  # Minimum engineering headcount to pass.
+  min_eng: 50
+
+# The firmographic pre-score that orders the pool before research. These lists
+# come from measured ZoomInfo industries; tune them to your book.
+fit:
+  software_heavy_industries:
+    - Software
+    - Finance
+    - Insurance
+    - Media & Internet
+    - Telecommunications
+    - Retail
+    - Healthcare Services
+    - Hospitals & Physicians Clinics
+  software_heavy_subs: []
+  # Outsourcing and IT-services shops sell engineering capacity; they rank as
+  # partners, not buyers.
+  it_services_subs:
+    - "Custom Software & IT Services"
+  # ZoomInfo counts civil, mechanical, and field engineers here, which inflates
+  # "engineering headcount" without a software team behind it.
+  non_software_industries:
+    - Construction
+    - "Energy, Utilities & Waste"
+    - "Minerals & Mining"
+    - Agriculture
+    - Real Estate
+  non_software_subs:
+    - "HR & Staffing"
+    - "Call Centers & Business Centers"
+    - "Facilities Management & Commercial Cleaning"
+    - Commercial Printing
+    - Accounting Services
+  # Stack mentions in the product-technology field that suggest real software work.
+  stack_pattern: '\bjava\b|spring boot|\.net|asp\.net|cobol|mainframe|ruby on rails|sql server|kubernetes|github|gitlab'
+  # 1-year employee growth rate above this earns a point.
+  growth_threshold: 10
+
+exclusions:
+  own_domains:
+    - factory.ai
+    - factory.com
+    - factory.inc
+  competitor_domains:
+    - anysphere.inc
+    - anysphere.co
+    - cursor.com
+    - cursor.sh
+    - replit.com
+    - cognition.ai
+    - codeium.com
+    - windsurf.com
+    - github.com
+    - anthropic.com
+    - openai.com
+    - augmentcode.com
+    - tabnine.com
+    - sourcegraph.com
+    - poolside.ai
+    - magic.dev
+    - tessl.io
+    - lovable.dev
+    - bolt.new
+    - stackblitz.com
+    - qodo.ai
+    - warp.dev
+    - zed.dev
+    - devin.ai
+  competitor_names_pattern: '^(anysphere|cursor|replit|cognition( ai| labs)?|codeium|windsurf|augment code|tabnine|sourcegraph|poolside|lovable|stackblitz|qodo|warp|devin)\b'
+  junk_names_pattern: '(the )?company ?name|n/?a|tbd|\d+|none|unknown|test|self.?empl\w*|freelance.*|individual entrepreneur|z( z)+'
+  public_sector_industries:
+    - Government
+  public_sector_subs:
+    - "Colleges & Universities"
+    - "K-12 Schools"
+    - Religious Organizations

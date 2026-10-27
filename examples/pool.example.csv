@@ -1,0 +1,6 @@
+Id,Name,Website,Type,BillingCountry,BillingState,BillingCity,ShippingCountry,ShippingState,NumberOfEmployees,ZI_Employee_Count__c,ZI_Engineering_Headcount__c,ZI_Primary_Industry__c,ZI_Primary_Sub_Industry__c,ZI_Past_1_Year_Employee_Growth_Rate__c,ZI_Product_Technology_Products_Used__c,Org_ID__c,Account_Tier__c,LastActivityDate,ZI_Ultimate_Parent_Company_Name__c
+001EXAMPLE0000001,Acme Routing,acmerouting.com,Prospect,United States,California,San Francisco,United States,California,520,520,80,Software,,22,"Java, Kubernetes",,,,Acme Routing
+001EXAMPLE0000002,Beta Freight,betafreight.com,Prospect,United States,New York,New York,United States,New York,400,400,90,Software,,,Python,,Warm,,
+001EXAMPLE0000003,Gamma Chips,gammachips.com,Prospect,United States,Texas,Austin,United States,Texas,3000,3000,600,Telecommunications,,,PostgreSQL,,Hot,,
+001EXAMPLE0000004,Delta Consulting,deltaconsulting.com,Prospect,,,,United States,Colorado,400,400,120,Business Services,Custom Software & IT Services,,,,,,Huge Holding Co
+001EXAMPLE0000005,Cursor Labs,cursor.com,Prospect,United States,California,San Francisco,United States,California,50,50,25,Software,,,,,Cold,,

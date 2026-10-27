@@ -1,0 +1,620 @@
+{
+ "as_of": "2026-10-21",
+ "accounts": [
+  {
+   "Name": "BlackLine",
+   "signals": [
+    {
+     "code": "S9",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "database, API, or pipeline work: \"\u2026Staff I Data Engineer Lead data pipeline development: Build and maintain PySpark ETL pipelines with\u2026\" (Staff I Data Engineer)",
+     "date": "2026-10-22",
+     "url": "https://blackline.wd108.myworkdayjobs.com/BlackLineCareers/job/New-York/Staff-I-Data-Engineer_001799"
+    },
+    {
+     "code": "S12",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "platform engineering: \"\u2026is, and define data and reporting requirements for the Data Platform engineer, validating that delivered datasets support the analysis. B\u2026\" (FinOps Engineer, Cost Analytics & Platform)",
+     "date": "2026-10-09",
+     "url": "https://blackline.wd108.myworkdayjobs.com/BlackLineCareers/job/Pleasanton/FinOps-Engineer--Cost-Analytics---Platform_001579"
+    },
+    {
+     "code": "S23",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "AI mandate or AI tooling: \"\u2026ild and maintain forecast and scenario models, including AI/LLM platform spend forecasting (for example, contract-vs-list-r\u2026\" (FinOps Engineer, Cost Analytics & Platform)",
+     "date": "2026-10-09",
+     "url": "https://blackline.wd108.myworkdayjobs.com/BlackLineCareers/job/Pleasanton/FinOps-Engineer--Cost-Analytics---Platform_001579"
+    },
+    {
+     "code": "S1",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "migration or modernization language: \"\u2026rvices, backend workflows, and platform services. Drive the modernization and migration of legacy .NET/C# services into Go/Pytho\u2026\" (Senior Software Engineer - Fullstack (Python/Reactjs))",
+     "date": "2026-08-14",
+     "url": "https://blackline.wd108.myworkdayjobs.com/BlackLineCareers/job/Bengaluru/Senior-Software-Engineer---Fullstack--Python-Reactjs-_000273"
+    },
+    {
+     "code": "S1",
+     "claim": "FC&C on GCP; I2C on Azure; Intercompany on AWS; Snowflake",
+     "date": "2026-02-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/1666134/000162828026011915/bl-20251231.htm",
+     "label": "observed",
+     "source": "sec.gov",
+     "confirmation": "phrase: migrated all Financial Close"
+    },
+    {
+     "code": "S9",
+     "claim": "FC&C on GCP; I2C on Azure; Intercompany on AWS; Snowflake",
+     "date": "2026-02-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/1666134/000162828026011915/bl-20251231.htm",
+     "label": "observed",
+     "source": "sec.gov",
+     "confirmation": "phrase: migrated all Financial Close"
+    },
+    {
+     "code": "T_MNA",
+     "claim": "NetNow acquired; one I2C platform; \"ideally\" a year (paraphrase)",
+     "date": "2026-09-21",
+     "url": "https://www.cfodive.com/news/blackline-cfo-focuses-integration-post-netnow-acquisition/832424/",
+     "label": "observed",
+     "source": "cfodive.com",
+     "confirmation": "phrase: more than a year"
+    },
+    {
+     "code": "T_FREEZE",
+     "claim": "~130 + 25 + 75 positions cut in 2025; ~1,850 employees at year-end",
+     "date": "2025-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/1666134/000162828026011915/bl-20251231.htm",
+     "label": "observed",
+     "source": "sec.gov",
+     "confirmation": "phrase: Fiscal 2025 Restructuring"
+    },
+    {
+     "code": "T_STALE_REQ",
+     "claim": "11 of 26 posted by Aug 31; 7 on Jul 20 (possible repost)",
+     "date": "2026-07-20",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "T_NEW_LEADER",
+     "claim": "CTO's role expanded to Products, Oct 2025",
+     "date": "2025-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/1666134/000162828026020925/bl-20260325.htm",
+     "label": "observed",
+     "source": "sec.gov",
+     "confirmation": "phrase: Executive Officers"
+    },
+    {
+     "code": "T_DEADLINE",
+     "claim": "Nomination window Jan 9-Feb 8, 2027; standstill ends Jan 7, 2027",
+     "date": "2027-01-07",
+     "url": "https://www.sec.gov/Archives/edgar/data/1666134/000119312526100451/d121231d8k.htm",
+     "label": "observed",
+     "source": "sec.gov",
+     "confirmation": "phrase: Restricted Period"
+    },
+    {
+     "code": "S5",
+     "claim": "Finance Control Console (Jun 25); Verity Prepare GA (Jul 27)",
+     "date": "2026-07-27",
+     "url": "https://investors.blackline.com/news-releases/news-release-details/blackline-advances-governed-ai-finance-general-availability",
+     "label": "observed",
+     "source": "investors.blackline.com",
+     "confirmation": "tokens: Finance, Prepare, Verity"
+    },
+    {
+     "code": "S23",
+     "claim": "Claude, Cursor, Copilot, Gemini Enterprise named; context only",
+     "date": "2026-09-04",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S4",
+     "claim": "In-house agent merged 21 PRs (~a fifth); rest by hand with Claude",
+     "date": "2026-08-25",
+     "url": "https://www.blackline.com/blog/a-tale-of-two-loops/",
+     "label": "observed",
+     "source": "blackline.com",
+     "confirmation": "phrase: 21 pull requests"
+    },
+    {
+     "code": "T_OUTAGE",
+     "claim": "October-release matching error; report errors in 3 regions",
+     "date": "2026-10-19",
+     "url": "https://trust.blackline.com/history.rss",
+     "label": "unknown",
+     "source": "trust.blackline.com",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S7",
+     "claim": "SOX/ITGC on internal GTM and financial systems; FedRAMP in HR, partnerships",
+     "date": "2026-10-13",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S10",
+     "claim": "Performance testing of monolith and microservices, SQL Server",
+     "date": "2026-10-02",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    }
+   ],
+   "expect": {
+    "final": 60.2,
+    "timing_points": 18.75,
+    "study_points": 16.67,
+    "stack_count": 8,
+    "timing_codes": [
+     "T_DEADLINE",
+     "T_FREEZE",
+     "T_MNA"
+    ],
+    "study_codes": [
+     "S1",
+     "S12",
+     "S4",
+     "S5",
+     "S9"
+    ],
+    "precedent": "A"
+   }
+  },
+  {
+   "Name": "Fireworks AI",
+   "signals": [
+    {
+     "code": "S3",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "on-call or incident ownership: \"\u2026operations, including detection engineering, alert triage, incident response, and continuous improvement through post-incident reviews.\u2026\" (Member of Technical Staff, Cloud & Infrastructure Security)",
+     "date": "2026-10-23",
+     "url": "https://jobs.ashbyhq.com/fireworks/976cf215-3710-4136-aac8-f0c0f08ef45e"
+    },
+    {
+     "code": "S7",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "security or compliance work: \"\u2026off-the-shelf solutions. Build and operate a comprehensive vulnerability management program, partnering with various teams to remed\u2026\" (Member of Technical Staff, Cloud & Infrastructure Security)",
+     "date": "2026-10-23",
+     "url": "https://jobs.ashbyhq.com/fireworks/976cf215-3710-4136-aac8-f0c0f08ef45e"
+    },
+    {
+     "code": "S12",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "platform engineering: \"\u2026s and developer tooling And many other cool things! This is platform engineering with product impact. Your systems will directly shape ho\u2026\" (Member of Technical Staff, Software Engineer)",
+     "date": "2026-10-23",
+     "url": "https://jobs.ashbyhq.com/fireworks/492db6a8-c757-4c4e-a2b3-f2ed183f8e6f"
+    },
+    {
+     "code": "S23",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "AI mandate or AI tooling: \"\u2026y and validate new model families on inference frameworks (vLLM, SGLang), determining optimal shapes, quantization configs,\u2026\" (AI Field Engineer, Singapore)",
+     "date": "2026-10-23",
+     "url": "https://jobs.ashbyhq.com/fireworks/1fc5eb25-08ad-4c82-aaee-5b903b9ab0ea"
+    },
+    {
+     "code": "S3",
+     "claim": "Evaluator secrets are a documented feature: Create Secret API, firectl secret, evaluator docs; incident-path link is inference",
+     "date": "2025-11-24",
+     "url": "https://safeguard.sh/resources/blog/fireworks-ai-evaluation-jobs-secrets-breach-october-2026",
+     "label": "observed",
+     "source": "safeguard.sh",
+     "confirmation": "tokens: Create, Evaluator, Secret"
+    },
+    {
+     "code": "S9",
+     "claim": "Nexus, Training API GA, Ember-1, multi-region, new models",
+     "date": "2026-07",
+     "url": "https://fireworks.ai/blog",
+     "label": "observed",
+     "source": "fireworks.ai",
+     "confirmation": "tokens: Ember-1, Training"
+    },
+    {
+     "code": "S1",
+     "claim": "Evaluator secrets are a documented feature: Create Secret API, firectl secret, evaluator docs; incident-path link is inference",
+     "date": "2025-11-24",
+     "url": "https://safeguard.sh/resources/blog/fireworks-ai-evaluation-jobs-secrets-breach-october-2026",
+     "label": "observed",
+     "source": "safeguard.sh",
+     "confirmation": "tokens: Create, Evaluator, Secret"
+    },
+    {
+     "code": "T_FUNDING",
+     "claim": "$1.505B Series D at $17.5B; $1B+ run rate; 40T tokens/day",
+     "date": "2026-07-15",
+     "url": "https://fireworks.ai/blog/series-d-announcement",
+     "label": "observed",
+     "source": "fireworks.ai",
+     "confirmation": "tokens: $1B, Series"
+    },
+    {
+     "code": "T_NEW_LEADER",
+     "claim": "SVP Engineering, VP Product Engineering, President listed; start dates unknown",
+     "date": "2026-10-21",
+     "url": "https://fireworks.ai/forge",
+     "label": "unknown",
+     "source": "fireworks.ai",
+     "confirmation": "rejected on review: leaders listed, start dates unknown"
+    },
+    {
+     "code": "T_STALE_REQ",
+     "claim": "Five engineering reqs with Ashby dates May\u2013Nov 2025; first archive captures Aug\u2013Sep 2026",
+     "date": "2025-05-06",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "T_OUTAGE",
+     "claim": "Two privacy roles and MTS (Member of Technical Staff) Growth posted Oct 8; link to incident not shown",
+     "date": "2026-10-08",
+     "url": "https://jobs.ashbyhq.com/fireworks/0c78aede-7c21-4d1e-88f1-f309deb9819e",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "rejected on review: job postings, not an incident"
+    },
+    {
+     "code": "S23",
+     "claim": "Internal coding traffic runs on its own inference; no tool named",
+     "date": "2026-09-23",
+     "url": "",
+     "label": "unknown",
+     "source": "account brief",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S7",
+     "claim": "SOC 2 Type II, ISO 27001/27701/42001 held; audit dates unknown",
+     "date": "2026-10-08",
+     "url": "https://docs.fireworks.ai/guides/security_compliance/data_security",
+     "label": "observed",
+     "source": "job posting",
+     "confirmation": "tokens: 27001, 27701, 42001"
+    },
+    {
+     "code": "T_DEADLINE",
+     "claim": "EU AI Act GPAI (general-purpose AI model) rules from 2 Aug 2025; Fireworks' coverage unknown",
+     "date": "2026-08-02",
+     "url": "https://artificialintelligenceact.eu",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S5",
+     "claim": "Nexus, Training API GA, Ember-1, multi-region, new models",
+     "date": "2026-07",
+     "url": "https://fireworks.ai/blog",
+     "label": "observed",
+     "source": "fireworks.ai",
+     "confirmation": "tokens: Ember-1, Training"
+    },
+    {
+     "code": "T_MNA",
+     "claim": "Hathora acquired; orchestration being integrated",
+     "date": "2026-03-08",
+     "url": "",
+     "label": "unknown",
+     "source": "account brief",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S11",
+     "claim": "32 public repos on github.com/fw-ai; internal hosting unknown",
+     "date": "2026-10-21",
+     "url": "https://github.com/fw-ai",
+     "label": "unknown",
+     "source": "github.com",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S_CASE",
+     "claim": "Groq, an inference provider, is a Factory case",
+     "date": "2025-12-30",
+     "url": "https://note.com/gen_ai/n/n121bbb4644fe?hl=en",
+     "label": "case",
+     "source": "note.com",
+     "confirmation": "tokens: Factory, Groq"
+    },
+    {
+     "code": "S_PARTNER",
+     "claim": "BCG (Boston Consulting Group), Deloitte, Turing listed as consulting partners (client-facing)",
+     "date": "2026-10-21",
+     "url": "https://fireworks.ai/partners",
+     "label": "unknown",
+     "source": "fireworks.ai",
+     "confirmation": "rejected on review: client-facing consulting partners, not an engineering SI"
+    }
+   ],
+   "expect": {
+    "final": 50.3,
+    "timing_points": 6.25,
+    "study_points": 23.33,
+    "stack_count": 8,
+    "timing_codes": [
+     "T_FUNDING"
+    ],
+    "study_codes": [
+     "S1",
+     "S12",
+     "S3",
+     "S5",
+     "S7",
+     "S9",
+     "S_CASE"
+    ],
+    "precedent": "A"
+   }
+  },
+  {
+   "Name": "GHX",
+   "signals": [
+    {
+     "code": "S1",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "migration or modernization language: \"\u2026components, prototypes, critical paths). Help decompose and modernize systems where valuable, encouraging reliable, observable,\u2026\" (Manager, Software Engineering)",
+     "date": "2026-02-20",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4664065005"
+    },
+    {
+     "code": "S3",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "on-call or incident ownership: \"\u2026align priorities and ensure cohesive execution. Coordinate incident response for the team, including coverage and technical response to\u2026\" (Manager, Software Engineering)",
+     "date": "2026-02-20",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4664065005"
+    },
+    {
+     "code": "T_STALE_REQ",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "Manager, Software Engineering open since 2026-02-20 (245 days)",
+     "date": "2026-02-20",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4664065005"
+    },
+    {
+     "code": "S7",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "security or compliance work: \"\u2026slate framework regulations (CIS AWS Foundations Benchmark, SOC 2, ISO 27001) into active compliance monitoring tracks across\u2026\" (Security Engineer III)",
+     "date": "2026-05-14",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4694892005"
+    },
+    {
+     "code": "S12",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "platform engineering: \"\u2026llaboration: Proven track record collaborating closely with platform engineers to remediate deep code issues without stalling continuous\u2026\" (Security Engineer III)",
+     "date": "2026-05-14",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4694892005"
+    },
+    {
+     "code": "S23",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "AI mandate or AI tooling: \"\u2026toring tracks across codebases and clouds. AI/ML Pipeline & LLM Engineering Guardrails Pipeline Hardening: Deconstruct risk\u2026\" (Security Engineer III)",
+     "date": "2026-05-14",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4694892005"
+    },
+    {
+     "code": "S9",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "database, API, or pipeline work: \"\u2026ooting, and performance tuning . Experience with Oracle and SQL Server , including complex SQL queries. Experience with Linux/Unix\u2026\" (Senior Software Engineer)",
+     "date": "2026-09-22",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4729968005"
+    },
+    {
+     "code": "S10",
+     "source": "job posting",
+     "label": "observed",
+     "claim": "testing and coverage work: \"\u2026engineering practices (AI-assisted code generation, review, test automation) across all teams, ensuring adoption and responsible use of\u2026\" (Sr Manager, Software Engineering)",
+     "date": "2026-10-06",
+     "url": "https://job-boards.greenhouse.io/globalhealthcareexchangeinc/jobs/4740288005"
+    },
+    {
+     "code": "S3",
+     "claim": "8 in-window incident notices; 4 name IBR (3 incidents)",
+     "date": "2026-09-08",
+     "url": "https://systemstatus.ghx.com/history.rss",
+     "label": "unknown",
+     "source": "systemstatus.ghx.com",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "T_OUTAGE",
+     "claim": "Scheduled disaster-recovery exercise, up to 10 hours, production to backup region and back",
+     "date": "2026-10-24",
+     "url": "https://history.rss",
+     "label": "unknown",
+     "source": "history.rss",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S1",
+     "claim": "\"ongoing monolith decoupling and Java version migrations\"",
+     "date": "2026-10-16",
+     "url": "https://freehire.me/jobs/software-engineer-ii-java-spring-aws-ci-cd-global-healthcare-exchange-inc-5jdy2qij",
+     "label": "observed",
+     "source": "job posting",
+     "confirmation": "phrase: monolith"
+    },
+    {
+     "code": "T_FUNDING",
+     "claim": "Veritas majority stake; \"accelerated AI investments\"; deal dated March 2026",
+     "date": "2026-01-08",
+     "url": "",
+     "label": "unknown",
+     "source": "account brief",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "T_STALE_REQ",
+     "claim": "Senior engineer open since Jan 20; manager since Feb 20",
+     "date": "2026-01-20",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S5",
+     "claim": "Orchestration layer launched; general availability (GA) undated",
+     "date": "2026-05-13",
+     "url": "",
+     "label": "unknown",
+     "source": "account brief",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S23",
+     "claim": "Copilot, Claude Code, Cursor named as examples only",
+     "date": "2026-09-15",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "T_DEADLINE",
+     "claim": "EUDAMED (the EU medical-device database) modules mandatory; GHX link unfound",
+     "date": "2026-05-28",
+     "url": "",
+     "label": "unknown",
+     "source": "account brief",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S9",
+     "claim": "EUDAMED (the EU medical-device database) modules mandatory; GHX link unfound",
+     "date": "2026-05-28",
+     "url": "",
+     "label": "unknown",
+     "source": "account brief",
+     "confirmation": "not confirmed at a loaded source"
+    }
+   ],
+   "expect": {
+    "final": 42.0,
+    "timing_points": 6.25,
+    "study_points": 20.0,
+    "stack_count": 7,
+    "timing_codes": [
+     "T_STALE_REQ"
+    ],
+    "study_codes": [
+     "S1",
+     "S10",
+     "S12",
+     "S3",
+     "S7",
+     "S9"
+    ],
+    "precedent": "A"
+   }
+  },
+  {
+   "Name": "PLAYSTUDIOS",
+   "signals": [
+    {
+     "code": "S1",
+     "claim": "4 of 9 studios, 177 positions, products, teams, tools consolidated; $33M\u2013$39M savings",
+     "date": "2026-03-16",
+     "url": "https://ir.playstudios.com/news-events/press-releases/detail/98/playstudios-inc-announces-fourth-quarter-and-full-year",
+     "label": "observed",
+     "source": "ir.playstudios.com",
+     "confirmation": "phrase: Unifying select technologies"
+    },
+    {
+     "code": "S23",
+     "claim": "AI use expanding across development and operating teams (company voice)",
+     "date": "2026-08-11",
+     "url": "https://ir.playstudios.com/news-events/press-releases/detail/100/playstudios-inc-announces-second-quarter-results",
+     "label": "observed",
+     "source": "ir.playstudios.com",
+     "confirmation": "phrase: AI Enablement"
+    },
+    {
+     "code": "S2",
+     "claim": "Enterprise Architect: duplication, technical debt, cloud cost",
+     "date": "2026-10-12",
+     "url": "https://freehire.me/jobs/enterprise-architect-playstudios-2nflykg3",
+     "label": "observed",
+     "source": "job posting",
+     "confirmation": "tokens: Architect, Enterprise"
+    },
+    {
+     "code": "S3",
+     "claim": ".NET and Java microservices; Kubernetes in Azure and AWS; Jenkins, ArgoCD, GitHub Actions; on-call",
+     "date": "2026-09-28",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "S9",
+     "claim": "SQL Server, SSIS; .NET and Unity; no versions",
+     "date": "2026-10-13",
+     "url": "",
+     "label": "unknown",
+     "source": "job posting",
+     "confirmation": "not confirmed at a loaded source"
+    },
+    {
+     "code": "T_DEADLINE",
+     "claim": "Meta retired Facebook.com games Sep 30, 2026",
+     "date": "2026-09-30",
+     "url": "https://playstudios.helpshift.com/hc/en/17-myvegas-classic/faq/3610-myvegas-classic-has-moved-to-a-new-website/?l=pl",
+     "label": "observed",
+     "source": "playstudios.helpshift.com",
+     "confirmation": "tokens: 2026, Facebook.com, Meta"
+    },
+    {
+     "code": "T_FREEZE",
+     "claim": "Restructuring expense $9.4M H1, $4.8M Q2; plan charges $5.7M H1",
+     "date": "2026-08-11",
+     "url": "",
+     "label": "unknown",
+     "source": "account brief",
+     "confirmation": "not confirmed at a loaded source"
+    }
+   ],
+   "expect": {
+    "final": 21.1,
+    "timing_points": 6.25,
+    "study_points": 10.0,
+    "stack_count": 4,
+    "timing_codes": [
+     "T_DEADLINE"
+    ],
+    "study_codes": [
+     "S1",
+     "S2",
+     "S23"
+    ],
+    "precedent": "A"
+   }
+  }
+ ]
+}

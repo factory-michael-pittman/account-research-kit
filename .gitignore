@@ -1,0 +1,6 @@
+# Run outputs stay on the machine that produced them; the kit's code,
+# prompts, config, tests, and examples are what travels.
+data/
+__pycache__/
+*.pyc
+.DS_Store
